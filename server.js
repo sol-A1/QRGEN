@@ -10,6 +10,8 @@ app.get('/', (req, res) => {
 });
 
 app.post('/generate', (req, res) => {
+  console.log('Received request:', req.body);
+
   const text = req.body.text;
 
   qr.toDataURL(text, (err, url) => {
